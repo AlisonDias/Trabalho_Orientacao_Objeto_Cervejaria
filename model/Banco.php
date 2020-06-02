@@ -1,6 +1,12 @@
 <?php
-    
-    require_once("../init.php");
+
+//require_once("../init.php");
+//require_once dirname(__FILE__) . "../init.php";
+
+define('BD_SERVIDOR', 'localhost');
+define('BD_USUARIO', 'root');
+define('BD_SENHA', '');
+define('BD_BANCO', 'cervejaria');
 
     class Banco {
 
