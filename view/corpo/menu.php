@@ -26,8 +26,8 @@
                 <a class="nav-link dropdown-toggle btn btn-secondary" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">Adminstração</a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                         <a class="dropdown-item" href="">Usúarios</a>
-                        <a class="dropdown-item" href="cerveja/cadastroCerveja.php">Cervejas</a>
-                        <a class="dropdown-item" href="">Mesas</a>
+                        <a class="dropdown-item" href="../cerveja/tabelaCerveja.php">Cervejas</a>
+                        <a class="dropdown-item" href="../mesa/tabelaMesa.php">Mesas</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="../login/sair.php">Sair</a>
                     </div>

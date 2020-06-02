@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<?php include("../head.php"); ?>
+<?php include("../corpo/head.php"); ?>
 
 <body>
-    <?php include("../menu.php"); ?>
+    <?php include("../corpo/menu.php"); ?>
     <div class="row">
         <form method="post" action="../../controller/cerveja/ControllerCadastroCerveja.php" id="form" name="form" onsubmit="validar(document.form); return false;" class="col-10">
             <div class="form-group">

@@ -21,7 +21,7 @@ class cadastroCervejaController
         $this->cadastro->setData(date('Y-m-d', strtotime($_POST['data'])));
         $result = $this->cadastro->incluir();
         if ($result >= 1) {
-            echo "<script>alert('Registro incluído com sucesso!');document.location='../../view/cerveja/TabelaCerveja.php'</script>";
+            echo "<script>alert('Registro incluído com sucesso!');document.location='../../view/cerveja/tabelaCerveja.php'</script>";
         } else {
             echo "<script>alert('Erro ao gravar registro!');history.back()</script>";
         }

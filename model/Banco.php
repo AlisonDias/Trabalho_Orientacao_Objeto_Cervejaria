@@ -72,10 +72,10 @@ define('BD_BANCO', 'cervejaria');
         }
     }
 
-    public function setMesa($ocupado)
+    public function setMesa()
     {
         $res = $this->con->prepare("INSERT INTO mesa (`ocupado`) VALUES (?)");
-        $res->bindValue(1, $ocupado, PDO::PARAM_INT);
+        $res->bindValue(1, 0, PDO::PARAM_INT);
         
 
         if ($res->execute() == TRUE) {
