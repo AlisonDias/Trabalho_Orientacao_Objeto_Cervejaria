@@ -53,9 +53,9 @@ define('BD_BANCO', 'cervejaria');
         }
     }
 
-    public function setCliente($nome, $cpf, $dataNasc, $logradouro, $bairro, $cep, $numero, $cidade, $ativo)
+    public function setCliente($nome, $cpf, $dataNasc, $logradouro, $bairro, $cep, $numero, $cidade)
     {
-        $res = $this->con->prepare("INSERT INTO usuario (`nome`, `cpf`, `dataNasc`, `logradouro`, `bairro`, `cep`, `numero`, `cidade`, `ativo`) VALUES (?,?,?,?,?,?,?,?,?)");
+        $res = $this->con->prepare("INSERT INTO cliente (`nome`, `cpf`, `dataNasc`, `logradouro`, `bairro`, `cep`, `numero`, `cidade`) VALUES (?,?,?,?,?,?,?,?)");
         $res->bindValue(1, $nome, PDO::PARAM_STR);
         $res->bindValue(2, $cpf, PDO::PARAM_INT);
         $res->bindValue(3, $dataNasc, PDO::PARAM_STR);
@@ -64,7 +64,6 @@ define('BD_BANCO', 'cervejaria');
         $res->bindValue(6, $cep, PDO::PARAM_INT);
         $res->bindValue(7, $numero, PDO::PARAM_INT);
         $res->bindValue(8, $cidade, PDO::PARAM_STR);
-        $res->bindValue(9, $ativo, PDO::PARAM_INT);
         if ($res->execute() == TRUE) {
             return true;
         } else {
