@@ -298,19 +298,30 @@ define('BD_BANCO', 'cervejaria');
         }
     }
 
-    public function updateMesa($ocupado, $clienteId)
+
+
+    public function updateMesa($id, $ocupado)
     {
 
-        $res = $this->con->prepare("UPDATE mesa SET ocupado = ?, cliente_id = ? WHERE id = ?");
+        if($ocupado == 0){
 
-        $res->bindValue(1, $ocupado, PDO::PARAM_STR);
-        $res->bindValue(2, $clienteId, PDO::PARAM_STR);
-        if ($res->execute() == TRUE) {
-            return true;
-        } else {
-            return false;
+            if($this->con->query("UPDATE mesa SET ocupado = 1 WHERE id = '$id'") == true){
+                return true;
+            }else{
+                return false;
+            };
+
+        }else{
+
+            if ($this->con->query("UPDATE mesa SET ocupado = 0 WHERE id = '$id'") == true) {
+                return true;
+            } else {
+                return false;
+            };
         }
+
     }
+
 
 
 

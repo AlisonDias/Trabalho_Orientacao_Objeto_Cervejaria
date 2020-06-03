@@ -1,6 +1,6 @@
 <?php
 require_once("../../model/banco.php");
-class deleta {
+class deletaControllererveja {
     private $deleta;
 
     public function __construct($id){
@@ -12,5 +12,5 @@ class deleta {
         }
     }
 }
-$obj = new deleta($_GET['id']);
+$obj = new deletaControllererveja($_GET['id']);
 ?>
