@@ -287,7 +287,7 @@ define('BD_BANCO', 'cervejaria');
         $res->bindValue(5, $bairro, PDO::PARAM_STR);
         $res->bindValue(6, $cep, PDO::PARAM_INT);
         $res->bindValue(7, $numero, PDO::PARAM_INT);
-        $res->bindValue(8, $cidade, PDO::PARAM_INT);
+        $res->bindValue(8, $cidade, PDO::PARAM_STR);
         $res->bindValue(9, $ativo, PDO::PARAM_INT);
         $res->bindValue(10, $id, PDO::PARAM_INT);
         if ($res->execute() == TRUE) {

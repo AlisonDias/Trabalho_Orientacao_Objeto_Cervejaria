@@ -12,7 +12,7 @@
                 <th>Marca</th>
                 <th>Tipo</th>
                 <th>Medida</th>
-                <th>Quantidade de Páginas</th>
+                <th>Em Estoque</th>
                 <th>Preço</th>
                 <th>Data</th>
                 <th>Ativo</th>
