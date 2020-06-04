@@ -26,6 +26,7 @@
             ?>
 
         </tbody>
+        <?php include("../corpo/rodape.php"); ?>
     </table>
 
     <a class="btn btn-success" href="cadastroCliente.php">Cadastrar Cliente</a>

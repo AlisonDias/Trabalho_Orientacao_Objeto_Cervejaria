@@ -26,6 +26,7 @@
             </div>
         </form>
     </div>
+    <?php include("../corpo/rodape.php"); ?>
 </body>
 
 </html>
