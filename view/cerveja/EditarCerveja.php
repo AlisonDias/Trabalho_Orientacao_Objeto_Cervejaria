@@ -1,3 +1,10 @@
+<?php
+
+if (!isset($_GET['id'])) {
+    echo "<script>alert('Não foi informado qual cerveja atualizar!');document.location='../../view/cerveja/tabelaCerveja.php'</script>";
+}else{
+
+?>
 <!DOCTYPE HTML>
 <html>
 <?php include("../corpo/head.php") ?>
@@ -34,3 +41,5 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 
 </html>
+
+<?php } ?>
