@@ -84,14 +84,13 @@ define('BD_BANCO', 'cervejaria');
         }
     }
 
-    public function setPedido($clienteId, $mesaId, $valorTotal, $finalizado)
+    public function setPedido($clienteId, $mesaId)
     {
         
-        $res = $this->con->prepare("INSERT INTO pedido (`cliente_id`, `mesa_id`, `valor_total`, `finalizado`) VALUES (?,?,?,?)");
+        $res = $this->con->prepare("INSERT INTO pedido (`cliente_id`, `mesa_id`) VALUES (?,?)");
         $res->bindValue(1, $clienteId, PDO::PARAM_INT);
         $res->bindValue(2, $mesaId, PDO::PARAM_INT);
-        $res->bindValue(3, $valorTotal, PDO::PARAM_INT);
-        $res->bindValue(1, $finalizado, PDO::PARAM_INT);
+      
 
         if ($res->execute() == TRUE) {
             return true;
@@ -101,11 +100,14 @@ define('BD_BANCO', 'cervejaria');
         }
     }
 
-    public function setItensPedido($cervejaId, $pedidoId)
+    public function setItensPedido($cervejaId, $pedidoId, $quantidade, $valorUnitario, $valorTotalItem)
     {
-        $res = $this->con->prepare("INSERT INTO itens_pedido (`cerveja_id`, `pedido_id`) VALUES (?,?)");
+        $res = $this->con->prepare("INSERT INTO itens_pedido (`cerveja_id`, `pedido_id`, `quantidade`,`valor_unitario`,`valor_total`) VALUES (?,?,?,?,?)");
         $res->bindValue(1, $cervejaId, PDO::PARAM_INT);
         $res->bindValue(2, $pedidoId, PDO::PARAM_INT);
+        $res->bindValue(3, $quantidade, PDO::PARAM_INT);
+        $res->bindValue(4, $valorUnitario, PDO::PARAM_STR);
+        $res->bindValue(5, $valorTotalItem, PDO::PARAM_STR);
         
 
         if ($res->execute() == TRUE) {
@@ -145,9 +147,9 @@ define('BD_BANCO', 'cervejaria');
         return $res->fetchAll();
     }
 
-    public function getItensPedido()
+    public function getItensPedido($id)
     {
-        $res = $this->con->query("SELECT * FROM itens_pedido");
+        $res = $this->con->query("SELECT * FROM itens_pedido WHERE pedido_id='$id'");
         return $res->fetchAll();
     }
 
@@ -321,6 +323,39 @@ define('BD_BANCO', 'cervejaria');
 
     }
 
+    public function updateValorPedido($id, $valor){
+
+        if ($this->con->query("UPDATE pedido SET valor_total = $valor WHERE id = '$id'") == true) {
+            return true;
+        } else {
+            return false;
+        };
+
+
+    }
+
+    public function updatediminuirCerveja($id, $quantidade)
+    {
+
+        if ($this->con->query("UPDATE cerveja SET quantidade = $quantidade WHERE id = '$id'") == true) {
+            return true;
+        } else {
+            return false;
+        };
+    }
+
+
+    public function updatePedido($id)
+    {
+
+    
+            if ($this->con->query("UPDATE pedido SET finalizado = 1 WHERE id = '$id'") == true) {
+                return true;
+            } else {
+                return false;
+            };
+        
+    }
 
 
 

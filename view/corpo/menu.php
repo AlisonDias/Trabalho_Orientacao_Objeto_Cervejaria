@@ -15,7 +15,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link btn btn-secondary" href="">Pedidos
+                    <a class="nav-link btn btn-secondary" href="../corpo/index.php">Pedidos
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>&nbsp&nbsp

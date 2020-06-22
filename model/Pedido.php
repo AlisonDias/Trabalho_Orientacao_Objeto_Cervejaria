@@ -48,7 +48,6 @@ class Pedido extends Banco {
     
 
     public function incluir(){
-        return $this->setPedido($this->getId(),$this->getClienteId(),$this->getMesaId(),
-        $this->getValorTotal(), $this->getFinalizado());
+        return $this->setPedido($this->getClienteId(),$this->getMesaId());
     }
 }

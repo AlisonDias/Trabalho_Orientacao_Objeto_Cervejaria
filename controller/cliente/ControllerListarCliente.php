@@ -24,7 +24,7 @@
                 echo "<td>".$value['numero'] . "</td>";
                 echo "<td>" . $value['cidade'] . "</td>";
                 echo "<td>".$value['ativo'] = ($value['ativo'] == "0") ? "Desativado":"Ativado" ."</td>";
-                echo "<td><a class='btn btn-warning' href='../../view/cliente/EditarCliente.php?id=".$value['id']."'>Editar</a><a class='btn btn-danger' href='../../controller/cerveja/ControllerDeletarCerveja.php?id=".$value['id']."'>Excluir</a></td>";
+                echo "<td><a class='btn btn-warning' href='../../view/cliente/EditarCliente.php?id=".$value['id']."'>Editar</a><a class='btn btn-danger' href='../../controller/cliente/ControllerDeletarCliente.php?id=".$value['id']."'>Excluir</a></td>";
                 echo "</tr>";
             }
         }

@@ -1,11 +1,14 @@
 <?php
 require_once("Banco.php");
 
-class Usuario extends Banco {
+class ItensPedido extends Banco {
 
     private $id;
     private $cervejaId;
     private $pedidoId;
+    private $quantidade;
+    private $valorUnitario;
+    private $ValorTotalItem;
     
 
     //Metodos Set
@@ -17,6 +20,17 @@ class Usuario extends Banco {
     }
     public function setPedidoId($val){
         $this->pedidoId = $val;
+    }
+    public function setQuantidade($val){
+        $this->quantidade = $val;
+    }
+    public function setValorUnitario($val)
+    {
+        $this->valorUnitario = $val;
+    }
+    public function setValorTotalItem($val)
+    {
+        $this->ValorTotalItem = $val;
     }
 
 
@@ -30,10 +44,22 @@ class Usuario extends Banco {
     public function getPedidoId(){
         return $this->pedidoId;
     }
+    public function getQuantidade()
+    {
+        return $this->quantidade;
+    }
+    public function getValorUnitario()
+    {
+        return $this->valorUnitario;
+    }
+    public function getValorTotalItem()
+    {
+        return $this->ValorTotalItem;
+    }
 
 
 
     public function incluir(){
-        return $this->setItensPedido($this->getCervejaId(),$this->getPedidoId());
+        return $this->setItensPedido($this->getCervejaId(),$this->getPedidoId(),$this->getQuantidade(),$this->getValorUnitario(), $this->getValorTotalItem());
     }
 }
